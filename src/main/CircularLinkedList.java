@@ -50,6 +50,21 @@ public class CircularLinkedList
             size++;
         }
 
+        public void  addNodeToTail(int data)
+        {
+            if(size == 0 )
+            {
+                addNodeToHead(data);
+            }else {
+                Node node = new Node(data);
+                tail.next = node;
+                tail = node;
+                tail.next= head;
+                size++;
+            }
+        }
+
+
         public void print() {
             if(size == 0) {
                 System.out.println("List is Empty");
