@@ -36,7 +36,18 @@ public class CircularLinkedList
         }
         public void addNodeToHead(int data)
         {
-
+            Node n = new Node(data);
+            if(size == 0)  {
+                head= n ;
+                tail = n;
+                n.next=head;
+            } else {
+                Node temp = head;
+                n.next = temp;
+                head = n;
+                tail.next= head;
+            }
+            size++;
         }
 
         public void print() {
@@ -55,4 +66,12 @@ public class CircularLinkedList
             }
         }
 
+        public static void main(String[] args)
+        {
+        CircularLinkedList linkedList = new CircularLinkedList();
+            for (int i = 0; i < 5; i++)
+            {
+            linkedList.print();
+            }
+        }
     }
